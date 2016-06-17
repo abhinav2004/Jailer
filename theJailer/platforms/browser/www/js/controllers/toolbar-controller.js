@@ -1,0 +1,3 @@
+mainApp.controller('toolbarController', ($scope) => {
+
+});

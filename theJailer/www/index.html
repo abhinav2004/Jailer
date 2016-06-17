@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/angular-material.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/material-icons.css">
+    <title>The Jailer</title>
+</head>
+
+<body ng-app="TheJailer" ng-cloak layout="row">
+    <md-content flex="grow">
+        <div ng-controller="toolbarController">
+            <md-toolbar class="md-hue-2">
+                <div class="md-toolbar-tools">
+                    <span flex="none"></span>
+                    <span flex layout="row" layout-align="center center" class="md-title">The Jailer</span>
+                    <span flex="none"></span>
+                </div>
+            </md-toolbar>
+        </div>
+        <div ng-controller="mainSceneController" ng-cloak id="sceneContainer">
+            <div layout="column">
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Welcome to The Jailer!</span>
+                            <span class="md-subhead">This is just a place holder for now.</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        A lot of stuff will come here!
+                    </md-card-content>
+                    <md-card-actions layout="column" layout-align="start">
+                        <md-button>Action 1</md-button>
+                        <md-button>Action 2</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+            <md-button class="md-fab md-fab-bottom-right" aria-label="Use Android">
+                <md-icon ng-click="settingsFabButtonClicked($event)">menu</md-icon>
+            </md-button>
+        </div>
+    </md-content>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/angular-animate.js"></script>
+    <script type="text/javascript" src="js/angular-aria.js"></script>
+    <script type="text/javascript" src="js/angular-material.js"></script>
+    <script type="text/javascript" src="js/the-jailer-cordova-app.js"></script>
+    <script type="text/javascript" src="js/the-jailer-angular-app.js"></script>
+    <script type="text/javascript" src="js/controllers/main-scene-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/toolbar-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/bottom-sheet-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/technologies-dialog-controller.js"></script>    
+</body>
+
+</html>
