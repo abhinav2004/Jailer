@@ -1,27 +1,33 @@
 
-var theJailer = {
-    // Application Constructor
+angular.services = {};
+var theJailer = {    
+    ngApp: {},
     initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
+        this.bindEvents();        
+    },       
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener("backbutton", this.onBackButtonClicked, false);
     },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        theJailer.receivedEvent('deviceready');
+        var body = document.getElementsByTagName('body');
+        angular.element(body).ready(function() {            
+            theJailer.initializeAngular(body);
+            theJailer.initializeAngularServices();
+        });
+        StatusBar.backgroundColorByHexString('37474F');
+        nativeclick.watch(['md-button']);
     },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        
-    }
+    initializeAngularServices: function() {
+        angular.services.$scene = angular.element(document.getElementsByTagName('body')).injector().get('$scene');
+    }, 
+    initializeAngular: function(body) {
+        angular.bootstrap(body, ['TheJailer']);
+        ngApp = angular.element(body);
+    },
+    onBackButtonClicked: function() {
+        angular.services.$scene.goBack();
+        ngApp.scope().$apply();
+    },
 };
-
 theJailer.initialize();

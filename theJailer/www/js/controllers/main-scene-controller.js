@@ -1,12 +1,5 @@
-mainApp.controller('mainSceneController', ($scope, $mdDialog, $mdBottomSheet) => {
-    $scope.showDialog = () => {
-        alert('Dialog!');
-    };
-    $scope.settingsFabButtonClicked = (ev) => {
-        $scope.alert = '';
-        $mdBottomSheet.show({
-            templateUrl: 'templates/bottom-sheet.html',
-            controller: 'ListBottomSheetCtrl'
-        });
+mainApp.controller('MainSceneController', function ($scope, $mdDialog, $mdBottomSheet, $location, $scene) {
+    $scope.configureButtonClick = function () {
+        $scene.switchTo('/configure');
     };
 });

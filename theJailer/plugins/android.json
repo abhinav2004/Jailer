@@ -9,6 +9,15 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.madfuse.the.jailer"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.madfuse.the.jailer"
+        },
+        "cordova-plugin-nativeclicksound": {
+            "PACKAGE_NAME": "com.madfuse.the.jailer"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.madfuse.the.jailer"
         }
     },
     "dependent_plugins": {}

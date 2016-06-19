@@ -1,5 +1,5 @@
-mainApp.controller('TechnologiesDialogController', ($scope,$mdDialog) => {
-    $scope.hideDialog = () => {
+mainApp.controller('TechnologiesDialogController', function ($scope,$mdDialog) {
+    $scope.hideDialog = function () {
         $mdDialog.hide();
     };
 });

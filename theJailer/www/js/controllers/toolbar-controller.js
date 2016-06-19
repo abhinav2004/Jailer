@@ -1,3 +1,3 @@
-mainApp.controller('toolbarController', ($scope) => {
+mainApp.controller('toolbarController', function ($scope) {
 
 });

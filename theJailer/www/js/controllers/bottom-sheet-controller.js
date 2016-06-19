@@ -5,7 +5,7 @@ mainApp.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet, $mdDi
         { text: 'About', icon: 'info_outline' }
     ];
 
-    $scope.buttonTouched = (index, event) => {
+    $scope.buttonTouched = function(index, event) {
         var clickedItem = $scope.buttonList[index];
         $mdBottomSheet.hide(clickedItem);
         switch (index) {
@@ -13,7 +13,7 @@ mainApp.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet, $mdDi
             case 2: $scope.showAboutDialog(event); break;
         }
     }
-    $scope.showTechnologiesUsed = (ev) => {
+    $scope.showTechnologiesUsed = function (ev) {
         $mdDialog.show({
             controller: 'TechnologiesDialogController',
             templateUrl: 'templates/dialogs/technologies.html',
@@ -23,7 +23,7 @@ mainApp.controller('ListBottomSheetCtrl', function($scope, $mdBottomSheet, $mdDi
             fullscreen: false
         })
     }
-    $scope.showAboutDialog = (ev) => {
+    $scope.showAboutDialog = function (ev) {
         $mdDialog.show({
             templateUrl: 'templates/dialogs/about.html',
             parent: angular.element(document.body),
