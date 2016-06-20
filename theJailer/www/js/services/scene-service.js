@@ -14,7 +14,7 @@ mainApp.service('$scene', function ($location) {
         }
     };
     goForwardTo = function (sceneName) {
-        var ngView = angular.element(document.getElementsByTagName('ng-view-container'));
+        var ngView = angular.element(document.getElementsByClassName('ng-view-container'));
         ngView.removeClass('slide-reverse');        
         ngView.addClass('slide');
         goTo(sceneName);
@@ -24,7 +24,7 @@ mainApp.service('$scene', function ($location) {
         $location.path(currentScene);
     };
     goBackTo = function (sceneName) {
-        var ngView = angular.element(document.getElementsByTagName('ng-view-container'));
+        var ngView = angular.element(document.getElementsByClassName('ng-view-container'));
         ngView.removeClass('slide');
         ngView.addClass('slide-reverse');
         goTo(sceneName);

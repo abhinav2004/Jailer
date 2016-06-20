@@ -1,20 +1,13 @@
 <div id="sceneContainer">
-    <div layout="column">
-        <md-card>
-            <md-card-actions layout="column" layout-align="start">
-                <md-button class="text-align-left pad5">
-                    <md-icon>add</md-icon>
-                    <button-text>Add Jail</button-text>
-                </md-button>
-                <md-button class="text-align-left pad5">
-                    <md-icon>security</md-icon>
-                    <button-text>Certificates</button-text>
-                </md-button>
-                <md-button class="text-align-left pad5" ng-click="configureButtonClick()">
-                    <md-icon>settings</md-icon>
-                    <button-text>Configure</button-text>
-                </md-button>
-            </md-card-actions>
-        </md-card>
-    </div>    
+    <md-tabs md-stretch-tabs="auto" md-swipe-content md-dynamic-height class="md-primary">
+        <md-tab label="Jails">
+            <ng-include src="'templates/tabs/jails.html'"></ng-include>
+        </md-tab>
+        <md-tab label="SSH Config">
+            <h1> Something will come here. Dont' worry :)</h1>
+        </md-tab>
+        <md-tab label="FreeNAS Config">
+            <ng-include src="'templates/tabs/configure.html'"></ng-include>            
+        </md-tab>
+    </md-tabs>
 </div>

@@ -1,8 +1,8 @@
 var mainApp = angular.module('TheJailer', ['ngMaterial', 'ngRoute']);
 mainApp.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
-        .primaryPalette('blue-grey')
-        .accentPalette('grey');
+        .primaryPalette('brown')
+        .accentPalette('orange');
 });
 
 mainApp.config(['$routeProvider', function ($routeProvider) {
@@ -11,22 +11,25 @@ mainApp.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'templates/scenes/main.html',
             controller: 'MainSceneController'
         })
-        .when('/configure', {
-            templateUrl: 'templates/scenes/configure.html',
-            controller: 'ConfigureSceneController'
+        .when('/technologies', {
+            templateUrl: 'templates/scenes/technologies.html',
         })
 }]);
 
-mainApp.controller('MainController', function($scope, $mdBottomSheet) {
-    $scope.settingsFabButtonClicked = function (ev) {
-        $scope.alert = '';
-        $mdBottomSheet.show({
-            templateUrl: 'templates/bottom-sheet.html',
-            controller: 'ListBottomSheetCtrl'
-        });
+mainApp.controller('MainController', function ($scope, $mdSidenav, $mdToast) {
+    $scope.closeSidebar = function () {
+        $mdSidenav('left').close();
     };
+    $scope.addButtonClicked = function (event) {
+        var toast = $mdToast.simple()
+            .textContent('Congratulations! You found out how to add a jail!!')
+            .action('Thank You!')
+            .highlightAction(false)
+            .position("bottom left");
+        $mdToast.show(toast);
+    }
 });
 
-mainApp.run(function($scene) {
+mainApp.run(function ($scene) {
     $scene.switchTo('/mainscene');
 });

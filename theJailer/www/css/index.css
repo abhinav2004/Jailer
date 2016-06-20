@@ -15,6 +15,10 @@
     background: url(../img/backbg.png) repeat;
 }
 
+md-tabs {
+    border-radius: 0;
+}
+
 md-content {
     background: transparent;
 }
@@ -27,6 +31,21 @@ md-content {
     font-size: 16px;
     vertical-align: middle;
     line-height: 32px;
+}
+
+.list-header {
+    height: 20px;
+    padding: 5px;
+    display: block;
+    top: 0px;
+}
+
+.ng-view-container {
+    height:100%;
+}
+
+md-toolbar md-icon {
+    font-size: 24px;
 }
 
 md-icon {
@@ -45,6 +64,10 @@ md-icon + button-text {
     padding: 5px;
 }
 
+.no-padding {
+    padding: 0px;
+}
+
 .configTitleIcon {
     margin: 0;
 }
@@ -52,6 +75,15 @@ md-icon + button-text {
 .configTitle {
     line-height: 32px;
 }
+
+.side-bar-button {
+    padding: 0 !important;
+}
+
+.item-height {
+    height: 54px;
+}
+
 /* ANIMATIONS */
 .slide > ng-view {
     position: absolute;

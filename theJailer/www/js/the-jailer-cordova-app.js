@@ -15,7 +15,7 @@ var theJailer = {
             theJailer.initializeAngular(body);
             theJailer.initializeAngularServices();
         });
-        StatusBar.backgroundColorByHexString('37474F');
+        StatusBar.backgroundColorByHexString('4E342E');
         nativeclick.watch(['md-button']);
     },
     initializeAngularServices: function() {
