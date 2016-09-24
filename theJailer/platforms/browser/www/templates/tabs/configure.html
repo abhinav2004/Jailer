@@ -1,0 +1,30 @@
+<md-content layout="column" ng-cloak class="md-inline-form">
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-title configTitle">
+                    <md-icon class="configTitleIcon">settings</md-icon>
+                    freenas config
+                </span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="column">
+            <md-input-container>
+                <label>ip address</label>
+                <input name="ipAddress" ng-model="ipAddress" required ip-address>
+            </md-input-container>
+            <md-input-container>
+                <label>user id</label>
+                <input>
+            </md-input-container>
+            <md-input-container>
+                <label>password</label>
+                <input type="password">
+            </md-input-container>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="shit()" class="lower-case">Save</md-button>
+            <md-button class="lower-case">Check</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -18,11 +18,13 @@
     <script type="text/javascript" src="js/angular-route.js"></script>
     <script type="text/javascript" src="js/the-jailer-angular-app.js"></script>
     <script type="text/javascript" src="js/services/scene-service.js"></script>
+    <script type="text/javascript" src="js/services/storage-service.js"></script>    
     <script type="text/javascript" src="js/controllers/main-scene-controller.js"></script>
     <script type="text/javascript" src="js/controllers/configure-scene-controller.js"></script>
     <script type="text/javascript" src="js/controllers/toolbar-controller.js"></script>
     <script type="text/javascript" src="js/controllers/sidenav-controller.js"></script>
     <script type="text/javascript" src="js/controllers/technologies-dialog-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/jail-controller.js"></script>    
     <script type="text/javascript" src="js/directives/ip-address-directive.js"></script>
     <script type="text/javascript" src="js/the-jailer-cordova-app.js"></script>
 </head>

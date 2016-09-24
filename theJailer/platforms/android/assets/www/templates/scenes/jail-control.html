@@ -1,0 +1,43 @@
+<md-card class="no-padding">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">basic info</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content layout="row" class="no-padding">
+        <md-list flex>
+            <md-list-item>
+                <p>ip address</p>
+                <p class="md-secondary">{{ViewModel.ipAddress}}</p>
+            </md-list-item>
+            <md-list-item>
+                <p>status</p>
+                <p class="md-secondary">{{ViewModel.status}}</p>
+            </md-list-item>
+        </md-list>
+    </md-card-content>
+</md-card>
+
+<md-card class="no-padding">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">control panel</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content layout="row" class="no-padding">
+        <md-list flex>
+            <md-list-item>
+                <md-button class="md-list-item-content text-align-left item-height" flex>
+                    <md-icon style="color: green;">play_arrow</md-icon> start </md-button>
+            </md-list-item>
+            <md-list-item>
+                <md-button class="md-list-item-content text-align-left item-height" flex>
+                    <md-icon style="color: blue;">replay</md-icon> restart </md-button>
+            </md-list-item>
+            <md-list-item>
+                <md-button class="md-list-item-content text-align-left item-height" flex>
+                    <md-icon style="color: red;">power_settings_new</md-icon> stop </md-button>
+            </md-list-item>
+        </md-list>
+    </md-card-content>
+</md-card>

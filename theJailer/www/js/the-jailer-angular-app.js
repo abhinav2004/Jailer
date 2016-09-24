@@ -14,9 +14,13 @@ mainApp.config(['$routeProvider', function ($routeProvider) {
         .when('/technologies', {
             templateUrl: 'templates/scenes/technologies.html',
         })
+        .when('/jailcontrol', {
+            templateUrl: 'templates/scenes/jail-control.html',
+            controller: 'JailController'
+        })
 }]);
 
-mainApp.controller('MainController', function ($scope, $mdSidenav, $mdToast) {
+mainApp.controller('MainController', function ($scope, $mdSidenav, $mdToast, $http) {
     $scope.closeSidebar = function () {
         $mdSidenav('left').close();
     };
@@ -27,6 +31,16 @@ mainApp.controller('MainController', function ($scope, $mdSidenav, $mdToast) {
             .highlightAction(false)
             .position("bottom left");
         $mdToast.show(toast);
+        //$http.defaults.headers.common = { "Access-Control-Request-Headers": "accept, origin, authorization" };
+        $http.defaults.headers.common['Authorization'] = 'Basic cm9vdDphZG1pbjEyMw==';
+        $http({
+            method: 'GET',
+            url: 'http://128.64.32.1/api/v1.0/account/users/'
+        }).then(function successCallback(response) {
+            alert(response);
+        }, function errorCallback(response) {
+           alert(response);
+        });
     }
 });
 

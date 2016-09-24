@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -21,21 +21,45 @@
     <script type="text/javascript" src="js/controllers/main-scene-controller.js"></script>
     <script type="text/javascript" src="js/controllers/configure-scene-controller.js"></script>
     <script type="text/javascript" src="js/controllers/toolbar-controller.js"></script>
-    <script type="text/javascript" src="js/controllers/bottom-sheet-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/sidenav-controller.js"></script>
     <script type="text/javascript" src="js/controllers/technologies-dialog-controller.js"></script>
+    <script type="text/javascript" src="js/controllers/jail-controller.js"></script>    
+    <script type="text/javascript" src="js/directives/ip-address-directive.js"></script>
     <script type="text/javascript" src="js/the-jailer-cordova-app.js"></script>
 </head>
 
-<body ng-cloak layout="column">
-    <md-content class="main-content" flex="grow" ng-controller="MainController">
-        <ng-include src="'templates/includes/toolbar.html'"></ng-include>
-        <ng-view-container>
-            <ng-view></ng-view>
-        </ng-view-container>
-        <md-button class="md-fab md-fab-bottom-right" ng-click="settingsFabButtonClicked($event)">
-            <md-icon>menu</md-icon>
-        </md-button>
+<body ng-cloak layout="column" class="main-content" flex="grow" ng-controller="MainController">
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop md-whiteframe="4" md-swipe-left="closeSidebar()">
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Jailer
+                <span class="md-caption" style="margin-left: auto;">v0.1Dev</span>
+            </h1>            
+        </md-toolbar>
+        <md-content layout-padding ng-controller="SidenavController">
+            <md-list>
+                <md-list-item ng-repeat="button in buttonList">
+                    <md-button class="md-list-item-content" ng-click="buttonTouched($index, $event)">
+                        <md-icon>{{button.icon}}</md-icon>
+                        <span class="md-inline-list-icon-label">{{button.text}}</span>
+                    </md-button>
+                </md-list-item>
+            </md-list>
+    </md-sidenav>
+    <md-toolbar class="toolbar-gradient md-hue-2" ng-controller="toolbarController">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button side-bar-button" ng-click="sidebarToggle()">
+                <md-icon>menu</md-icon>
+            </md-button>
+            <h1>Jailer</h1>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <md-content class="ng-view-container">
+        <ng-view></ng-view>
     </md-content>
+    <md-button class="md-fab md-fab-bottom-right" ng-click="addButtonClicked($event)">
+        <md-icon>add</md-icon>
+    </md-button>
 </body>
 
 </html>
